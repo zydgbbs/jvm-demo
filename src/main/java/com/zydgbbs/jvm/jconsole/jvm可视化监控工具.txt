@@ -1,0 +1,2 @@
+执行JconsoleTest类，然后使用下面的名称查看内存
+jconsole

@@ -1,0 +1,37 @@
+虚拟机的种类
+1 Sun Classic虚拟机
+世界上第一款商用的Java虚拟机
+只能使用纯解释器的方式来执行Java代码
+
+2 Exact VM虚拟机
+Exact Memory Management准确式内存管理
+编译器和解释器混合工作以及两级即时编译器
+只在Solaris平台发布
+英雄气短
+
+3 HotSpot VM虚拟机
+称霸武林
+
+4 KVM虚拟机
+Kilobyte 简单，轻量，高度可移植
+在手机平台运行
+
+5 BEA JRockit虚拟机
+世界上最快的Java虚拟机
+专注服务器端应用
+优势
+垃圾收集器
+MissionControl服务套件
+
+6 J9虚拟机
+IBM
+IBM Technology for Java virtual Machine IT4j
+
+7 Dalvik虚拟机
+
+8 Microsoft JVM
+
+9 Azul VM 和 Liquid VM
+高性能的Java虚拟机
+
+10 TaobaoVM

@@ -1,0 +1,24 @@
+一 优先分配到Eden
+如代码EdenTest.java 打印出的信息：eden space 65536K, 41% used
+从而验证是优先分配到Eden区域中
+-Xmn10m执行新生代内存为10兆
+-Xms20m -Xmx20m
+-XX:SurvivorRatio=8
+
+二 大对象直接分配到老年代
+必须使用Serial和ParNew两个收集器，这个-XX:PretenureSizeThreshold才有效
+-XX:PretenureSizeThreshold
+如：-verbose:gc -XX:+PrintGCDetails -Xms20m -Xmx20m -Xmn10m -XX:SurvivorRatio=8 -XX:+UseSerialGC -XX:PretenureSizeThreshold=6m
+
+三 长期存活的对象分配到老年代
+-XX:MaxTenuringThreshold
+默认是15
+
+四 空间分配担保
+-XX:+HandlePromotionFailure
+可以设置为true或者false
+
+五 动态对象年龄判断
+
+六 逃逸分析与栈上分析
+逃逸分析：分析对象的作用域。见代码：StackAllocation.java上的注释

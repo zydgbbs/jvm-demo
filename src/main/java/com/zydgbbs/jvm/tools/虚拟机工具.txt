@@ -1,0 +1,48 @@
+虚拟机工具
+
+一 jps
+本地虚拟机唯一id
+如：jps -l
+jps -m
+jps -v
+jps -mlv
+m:运行时传入主类的参数
+v:虚拟机参数
+l:运行的主类全面或者jar包名称
+
+
+二 jstat
+类装载，内存，垃圾收集，jit编译的信息
+如：jstat -gcutil 2764
+每250毫秒查询一次进程2764垃圾收集状况，一共查询20次
+jstat -gc 2764 250 20
+【元空间】
+元空间的本质和永久代类似，都是对JVM规范中方法区的实现。
+不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。因此，默认情况下，元空间的大小仅受本地内存限制；
+
+三 jinfo
+实时查看和调整虚拟机各项参数
+如：jinfo -flag UseSerialGC 1444(查看是否使用了Serial的GC)
+jinfo -flag UseG1GC 1444
+-XX:[+/-]option
+-XX:option=value
+
+四 jmap
+用于生产堆转储快照
+如：jmap -dump:format=b,file=eclipse.bin 3500
+
+五 jhat
+虚拟机堆转储快照分析工具,cpu和内存占用率比较高
+jhat eclipse.bin
+
+六 jstack
+Java堆栈跟踪工具
+如：jstack -l 3500
+
+七 jconsole
+Java监视与管理控制台
+jconsole内存监控
+jconsole线程监控
+jconsole死锁
+
+八 VisualVM工具使用
